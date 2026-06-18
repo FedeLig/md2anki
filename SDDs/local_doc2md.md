@@ -8,14 +8,11 @@ The system is bound by specific constraints: **local CPU-only inference**, **eas
 
 ## **Framework Comparison**
 
-| **Framework** | **Primary Target** | **Deployment** | **Math & Table Fidelity** | **CPU Performance** | **Architectural Note** |
-
+| Framework | Primary Target | Deployment | Math & Table Fidelity | CPU Performance | Architectural Note |
+| :---- | :---- | :---- | :---- | :---- | :---- |
 | **MinerU** | Academic PDFs | Very Hard | Exceptional (LaTeX) | Extremely Slow | Relies on heavy VLMs & Detectron2 (20GB+ weights). Fails "easy deployment" test. |
-
 | **Docling** | Enterprise PDFs | Easy | Very High | Fast (ONNX) | Excellent pure Python tool, highly optimized for CPU, but not strictly tailored for extreme math. |
-
 | **OpenDataLoader** | PDFs (Hybrid) | Medium (JDK) | Exceptional | Fast (\~0.46s/page) | Routes complex math/tables to local AI; uses fast heuristics for standard text. |
-
 | **MarkItDown** | Office (.pptx, .docx) | Very Easy | Low (Stand-alone) | Instant | Natively extracts Office XML. Requires an LLM integration for complex vision/layouts. |
 
 ## **Rationale & Final Architectural Choice**
